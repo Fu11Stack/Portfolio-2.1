@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Me from "../assets/Images/profile-img.png";
+import Me from "../assets/Images/Ninja-PNG.png";
 import { mediaQueries } from "./Themes";
 
 const Box = styled(motion.div)`
@@ -89,6 +89,7 @@ height:50vh;
   }
 
   //height:55vh;
+  max-width: 750px;
 `;
 
 const SubBox = styled.div`
@@ -102,6 +103,8 @@ const SubBox = styled.div`
     transform: translate(-50%, 0%);
     width: 100%;
     height: auto;
+    max-height: 650px;
+    max-width: 650px;
   }
   ${mediaQueries(50)`
       width: 100%;
@@ -205,7 +208,7 @@ const Intro = () => {
         <Text>
           <h1>Hi,</h1>
 
-          <h3>I'm CodeBucks.</h3>
+          <h3>I'm Justin Subocz.</h3>
 
           <h6>I design and Code simple yet beautiful websites.</h6>
         </Text>

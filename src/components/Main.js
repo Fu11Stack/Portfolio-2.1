@@ -4,7 +4,7 @@ import { lazy, Suspense, useState } from "react";
 import { motion } from "framer-motion";
 
 //Components
-import { YinYang } from "./AllSvgs";
+import { Koi } from "./AllSvgs";
 import Intro from "./Intro";
 import Loading from "../subComponents/Loading";
 import { mediaQueries } from "./Themes";
@@ -61,8 +61,8 @@ from {
 `;
 const Center = styled.button`
   position: absolute;
-  top: ${(props) => (props.click ? "85%" : "50%")};
-  left: ${(props) => (props.click ? "92%" : "50%")};
+  top: ${(props) => (props.click ? "95%" : "50%")};
+  left: ${(props) => (props.click ? "96%" : "50%")};
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
@@ -73,7 +73,7 @@ const Center = styled.button`
   align-items: center;
   transition: all 1s ease;
   & > *:first-child {
-    animation: ${rotate} infinite 1.5s linear;
+    animation: ${rotate} infinite 2.5s linear;
   }
   & > *:last-child {
     display: ${(props) => (props.click ? "none" : "inline-block")};
@@ -81,8 +81,8 @@ const Center = styled.button`
   }
 
   @media only screen and (max-width: 50em) {
-    top: ${(props) => (props.click ? "90%" : "50%")};
-    left: ${(props) => (props.click ? "90%" : "50%")};
+    top: ${(props) => (props.click ? "96%" : "50%")};
+    left: ${(props) => (props.click ? "95%" : "50%")};
     width: ${(props) => (props.click ? "80px" : "150px")};
     height: ${(props) => (props.click ? "80px" : "150px")};
   }
@@ -211,14 +211,14 @@ const Main = () => {
           )}
           <Center click={click}>
             {mq ? (
-              <YinYang
+              <Koi
                 onClick={() => handleClick()}
                 width={click ? 80 : 150}
                 height={click ? 80 : 150}
                 fill="currentColor"
               />
             ) : (
-              <YinYang
+              <Koi
                 onClick={() => handleClick()}
                 width={click ? 120 : 200}
                 height={click ? 120 : 200}
@@ -230,10 +230,7 @@ const Main = () => {
           </Center>
 
           {mq ? (
-            <Contact
-              click={+click}
-              target="_blank"
-              to={{ pathname: "mailto:codebucks27@gmail.com" }}
+            <Contact target="_blank" to="/email" 
             >
               <motion.h3
                 initial={{
@@ -251,10 +248,7 @@ const Main = () => {
               </motion.h3>
             </Contact>
           ) : (
-            <Contact
-              click={+false}
-              target="_blank"
-              to={{ pathname: "mailto:codebucks27@gmail.com" }}
+            <Contact target="_blank" to="/email" 
             >
               <motion.h3
                 initial={{

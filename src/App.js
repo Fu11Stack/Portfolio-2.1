@@ -12,6 +12,7 @@ const AboutPage = lazy(() => import("./components/AboutPage"));
 const MySkillsPage = lazy(() => import("./components/MySkillsPage"));
 const BlogPage = lazy(() => import("./components/BlogPage"));
 const WorkPage = lazy(() => import("./components/WorkPage"));
+const EmailPage = lazy (() => import ("./components/EmailPage"));
 const SoundBar = lazy(() => import("./subComponents/SoundBar"));
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
               <Route exact path="/work" component={WorkPage} />
 
               <Route exact path="/skills" component={MySkillsPage} />
+
+              <Route exact path="/email" component={EmailPage} />
             </Switch>
           </AnimatePresence>
         </Suspense>
