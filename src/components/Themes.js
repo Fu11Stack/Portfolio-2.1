@@ -16,6 +16,11 @@ export const DarkTheme = {
 
 }
 
+export const Shadow = {
+  textshadow: "0 0 4px #000",
+
+}
+
 // You can also use these breakpoints after importing it and use it as breakpoints.sm
 export const breakpoints = {
     sm: 20,//em

@@ -1,10 +1,10 @@
-import { Github, Twitter, Facebook, YouTube } from "../components/AllSvgs";
+import { Github, Linkedin, Email } from "../components/AllSvgs";
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
 import { NavLink } from "react-router-dom";
-import { DarkTheme, mediaQueries } from "../components/Themes";
+import { DarkTheme, lightTheme, mediaQueries } from "../components/Themes";
 
 const Icons = styled.div`
   display: flex;
@@ -18,6 +18,11 @@ const Icons = styled.div`
 
   & > *:not(:last-child) {
     margin: 0.5rem 0;
+  
+    @media only screen and (max-width: 50em) {
+    
+    
+    }  
 
     ${mediaQueries(20)`
       margin: 0.3rem 0;
@@ -33,7 +38,9 @@ const Icons = styled.div`
         width:20px;
         height:20px
       }
-
+      
+    
+          
   `};
 `;
 const Line = styled(motion.span)`
@@ -76,7 +83,7 @@ const SocialIcons = (props) => {
           target="_blank"
           to={{ pathname: "https://twitter.com/code_bucks" }}
         >
-          <Twitter
+          <Linkedin
             width={25}
             height={25}
             fill={
@@ -95,11 +102,11 @@ const SocialIcons = (props) => {
           target="_blank"
           to={{ pathname: "https://www.facebook.com/codebucks27" }}
         >
-          <Facebook
+          <Email
             width={25}
             height={25}
             fill={
-              props.theme === "dark" ? `${DarkTheme.text}` : `${DarkTheme.body}`
+              props.theme === "light" ? `${lightTheme.text}` : `${lightTheme.body}`
             }
           />
         </NavLink>
@@ -109,22 +116,7 @@ const SocialIcons = (props) => {
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1.6 }}
       >
-        <NavLink
-          style={{ color: "inherit" }}
-          target="_blank"
-          to={{
-            pathname:
-              "https://www.youtube.com/channel/UCeYt6blRBKuNrEg_-282fSA",
-          }}
-        >
-          <YouTube
-            width={25}
-            height={25}
-            fill={
-              props.theme === "dark" ? `${DarkTheme.text}` : `${DarkTheme.body}`
-            }
-          />
-        </NavLink>
+ 
       </motion.div>
 
       <Line

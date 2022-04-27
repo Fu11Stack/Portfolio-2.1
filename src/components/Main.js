@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Koi } from "./AllSvgs";
 import Intro from "./Intro";
 import Loading from "../subComponents/Loading";
+import { Shadow } from "./Themes";
 import { mediaQueries } from "./Themes";
 
 const PowerButton = lazy(() => import("../subComponents/PowerButton"));
@@ -99,9 +100,15 @@ const Contact = styled(NavLink)`
   right: calc(1rem + 2vw);
   text-decoration: none;
   z-index: 1;
+
+  @media only screen and (max-width: 50em) {
+    color: ${(props) => (props.theme.body)};
+    text-shadow: ${(props) => ( "0 0 4px #000" )};
+  }
+
 `;
 const BLOG = styled(NavLink)`
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  color: ${(props) => (props.theme.text)};
   position: absolute;
   top: 50%;
   right: calc(1rem + 2vw);
@@ -109,8 +116,13 @@ const BLOG = styled(NavLink)`
   z-index: 1;
 
   text-decoration: none;
+
+
+  
   @media only screen and (max-width: 50em) {
-    text-shadow: ${(props) => (props.click ? "0 0 4px #000" : "none")};
+    
+    color: ${(props) => (props.theme.body)};
+    text-shadow: ${(props) => ( "0 0 4px #000" )};
   }
 `;
 const WORK = styled(NavLink)`
@@ -121,6 +133,9 @@ const WORK = styled(NavLink)`
   transform: translate(-50%, -50%) rotate(-90deg);
   z-index: 1;
   text-decoration: none;
+
+
+    
   @media only screen and (max-width: 50em) {
     text-shadow: ${(props) => (props.click ? "0 0 4px #000" : "none")};
   }
@@ -140,7 +155,16 @@ const ABOUT = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   text-decoration: none;
   z-index: 1;
+
+  
+
+  @media only screen and (max-width: 50em) {
+    color: ${(props) => (props.theme.body)};
+    text-shadow: ${(props) => ( "0 0 4px #000" )};
+  }
 `;
+
+
 const SKILLS = styled(NavLink)`
   color: ${(props) => props.theme.text};
   text-decoration: none;
@@ -207,7 +231,8 @@ const Main = () => {
           {mq ? (
             <SocialIcons theme="light" />
           ) : (
-            <SocialIcons theme={click ? "dark" : "light"} />
+            <SocialIcons theme={click ? "dark" : "light"}
+             click={mq ? +false : +click} />
           )}
           <Center click={click}>
             {mq ? (
@@ -324,7 +349,7 @@ const Main = () => {
           <BottomBar>
             <ABOUT
               onClick={() => setClick(false)}
-              click={mq ? +false : +click}
+              click={mq ? +true : +click}
               to="/about"
             >
               <motion.h2
