@@ -2,13 +2,14 @@ import React, {useRef, lazy} from 'react';
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import emailjs from '@emailjs/browser';
-import { lightTheme, mediaQueries } from "./Themes";
+import { mediaQueries } from "./Themes";
+import BigTitle from '../subComponents/BigTitle';
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
 const PowerButton = lazy(() => import("../subComponents/PowerButton"));
-const ParticlesComponent = lazy(() =>
-  import("../subComponents/ParticlesComponent")
-);
+
+
+
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
@@ -69,7 +70,19 @@ export default function ContactUs ()  {
       });
   };
 
+  const Send = styled.input`
+  background-color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
+  
+  padding: 0.5rem calc(2rem + 2vw);
+  border-radius: 0 0 0 50px;
+  font-size: calc(1em + 0.5vw);
 
+  ${Main}:hover & {
+    background-color: ${(props) => props.theme.body};
+    color: ${(props) => props.theme.text};
+  }
+`;
 
   
   return (
@@ -80,32 +93,34 @@ export default function ContactUs ()  {
   animate={{ opacity: 1, transition: { duration: 1 } }}
   exit={{ opacity: 0, transition: { duration: 0.5 } }}
   > 
-   
-       
+
         
-         <form  onSubmit={sendEmail}>
-         <Main>
-         <label>Name</label>
-         <input  type="text" name="user_name" size="50" />
-         
-         <label>Email</label>
-         
-         <input type="email" name="user_email" size="50" />
-         
-         <label>Message</label>
-         
-         <textarea name="message"  rows="8" cols="55"/>
-         
-         <input type="submit" value="Send" />
-         </Main>
-         </form>
+        <form  onSubmit={sendEmail}>
+        <Main>
+        <label>Name</label>
+        <input  type="text" name="user_name" size="50" />
+        
+        <label>Email</label>
+        
+        <input type="email" name="user_email" size="50" />
+        
+        <label>Message</label>
+        
+        <textarea name="message"  rows="8" cols="55"/>
+        
+        <Send input type="submit" value="Send">
+          
+        </Send>
+
+        </Main>
+        </form>
         
         
-       
-       
-   <SocialIcons theme="light" />
-   <LogoComponent theme="light" />
-   <PowerButton />
+
+    <SocialIcons theme="light" />
+    <LogoComponent theme="light" />
+    <PowerButton />
+    <BigTitle text="Email" top="80%" right="30%" />
   </Box>
   );
 };

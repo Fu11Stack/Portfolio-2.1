@@ -3,6 +3,7 @@ import { Github, Linkedin, Email } from "../components/AllSvgs";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+
 import { NavLink } from "react-router-dom";
 import { DarkTheme, lightTheme, mediaQueries } from "../components/Themes";
 
@@ -16,13 +17,11 @@ const Icons = styled.div`
 
   z-index: 3;
 
+
   & > *:not(:last-child) {
     margin: 0.5rem 0;
   
-    @media only screen and (max-width: 50em) {
-    
-    
-    }  
+
 
     ${mediaQueries(20)`
       margin: 0.3rem 0;
@@ -40,7 +39,8 @@ const Icons = styled.div`
       }
       
     
-          
+
+
   `};
 `;
 const Line = styled(motion.span)`

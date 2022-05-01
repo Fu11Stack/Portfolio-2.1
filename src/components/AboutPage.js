@@ -110,15 +110,12 @@ const AboutPage = () => {
           <Main
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}>
-            I'm a front-end developer located in India. I love to create simple
-            yet beautiful websites with great user experience.
+            I'm a front-end developer located in San Jose, CA. I love to code and design front-end websites with great user experience.
             <br />
             <br />
-            I'm interested in the whole frontend stack Like trying new things
-            and building great projects. I'm an independent freelancer and
-            blogger. I love to write blogs and read books. <br />
-            <br />I believe everything is an Art when you put your consciousness
-            in it. You can connect with me via social links.{' '}
+            I'm interested in the whole frontend. I like trying new things
+            and building great projects. Currently enjoying creating stylish and functional React components <br />
+            <br />I continously strive to get better expanding my learning. Have a passion for new technology. Always excited to code as it allows unique ways to solve problems, be creative, and work with others  . {' '}
           </Main>
           <BigTitle text='ABOUT' top='10%' left='5%' />
         </Box>

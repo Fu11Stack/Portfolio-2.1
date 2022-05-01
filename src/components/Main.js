@@ -1,14 +1,14 @@
 import styled, { keyframes } from "styled-components";
 import { NavLink } from "react-router-dom";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 //Components
 import { Koi } from "./AllSvgs";
 import Intro from "./Intro";
 import Loading from "../subComponents/Loading";
-import { Shadow } from "./Themes";
 import { mediaQueries } from "./Themes";
+import { useEffect } from "react/cjs/react.production.min";
 
 const PowerButton = lazy(() => import("../subComponents/PowerButton"));
 const SocialIcons = lazy(() => import("./../subComponents/SocialIcons"));
@@ -117,7 +117,6 @@ const BLOG = styled(NavLink)`
 
   text-decoration: none;
 
-
   
   @media only screen and (max-width: 50em) {
     
@@ -183,7 +182,7 @@ const DarkDiv = styled.div`
   ${(props) =>
     props.click
       ? mediaQueries(50)`
-       height: 50%;
+        height: 50%;
   right:0;
   
   width: 100%;
@@ -191,7 +190,7 @@ const DarkDiv = styled.div`
 
   `
       : mediaQueries(50)`
-       height: 0;
+        height: 0;
   
   width: 0;
   `};
@@ -215,6 +214,7 @@ const Main = () => {
   };
   const mq = window.matchMedia("(max-width: 50em)").matches;
 
+
   return (
     <Suspense fallback={<Loading />}>
       <MainContainer
@@ -228,12 +228,13 @@ const Main = () => {
         <Container>
           <LogoComponent theme={click ? "dark" : "light"} />
           <PowerButton />
-          {mq ? (
-            <SocialIcons theme="light" />
-          ) : (
-            <SocialIcons theme={click ? "dark" : "light"}
-             click={mq ? +false : +click} />
+            {mq ? (
+              <SocialIcons theme="true" />
+            ) : (
+              <SocialIcons theme={click ? "dark" : "light"}
+            />
           )}
+
           <Center click={click}>
             {mq ? (
               <Koi
