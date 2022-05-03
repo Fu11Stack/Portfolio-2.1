@@ -20,19 +20,19 @@ const Box = styled(motion.div)`
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-
-  `
+`
 
 
   const Main = styled(motion.div)`
   border: 3px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.body};
-  padding: 1rem;
+  padding: .5rem;
   width: 30vw;
   height: 60vh;
   z-index: 3;
   line-height: 1;
+  border-radius: 0 50px 0 50px;
 
   ${mediaQueries(60)`
             height: 55vh;
@@ -84,19 +84,33 @@ export default function ContactUs ()  {
   }
 `;
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+};
   
   return (
 
   <Box
-  key="skills"
+  variants={container}
   initial={{ opacity: 0 }}
-  animate={{ opacity: 1, transition: { duration: 1 } }}
+  animate={{ opacity: 1, transition: { duration: 1.5 } }}
   exit={{ opacity: 0, transition: { duration: 0.5 } }}
   > 
 
         
         <form  onSubmit={sendEmail}>
-        <Main>
+        <Main
+        initial={{ height: 250 }}
+        animate={{ height: 500 }}
+        transition={{ type: "spring", duration: 2.5, delay: 0 }}
+        exit={{ opacity: 0, transition: { duration: 0.5 } }} >
         <label>Name</label>
         <input  type="text" name="user_name" size="50" />
         

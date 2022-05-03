@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { NavLink } from "react-router-dom";
-import { lazy, Suspense, useState, useRef } from "react";
+import { lazy, Suspense, useState } from "react";
 import { motion } from "framer-motion";
 
 //Components
@@ -8,7 +8,7 @@ import { Koi } from "./AllSvgs";
 import Intro from "./Intro";
 import Loading from "../subComponents/Loading";
 import { mediaQueries } from "./Themes";
-import { useEffect } from "react/cjs/react.production.min";
+
 
 const PowerButton = lazy(() => import("../subComponents/PowerButton"));
 const SocialIcons = lazy(() => import("./../subComponents/SocialIcons"));
@@ -229,7 +229,7 @@ const Main = () => {
           <LogoComponent theme={click ? "dark" : "light"} />
           <PowerButton />
             {mq ? (
-              <SocialIcons theme="true" />
+              <SocialIcons fill="currentColor" />
             ) : (
               <SocialIcons theme={click ? "dark" : "light"}
             />
@@ -274,7 +274,7 @@ const Main = () => {
               </motion.h3>
             </Contact>
           ) : (
-            <Contact target="_blank" to="/email" 
+            <Contact to="/email" 
             >
               <motion.h3
                 initial={{
@@ -307,7 +307,7 @@ const Main = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                Blog
+                Resume
               </motion.h2>
             </BLOG>
           ) : (
@@ -324,7 +324,7 @@ const Main = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                Blog
+                Resume
               </motion.h2>
             </BLOG>
           )}

@@ -23,6 +23,7 @@ const Box = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
 
   ${mediaQueries(50)`
             flex-direction:column;  
@@ -45,12 +46,14 @@ height:auto;
 const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
-  background-color: ${(props) => props.theme.body};
+  
   padding: 2rem;
   width: 30vw;
   height: 60vh;
   z-index: 3;
   line-height: 1.5;
+  backdrop-filter: blur(4px);
+
 
   ${mediaQueries(60)`
             height: 55vh;

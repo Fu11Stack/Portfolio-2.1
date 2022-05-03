@@ -132,10 +132,31 @@ const item = {
   show: { scale: 1, transition: { type: "spring", duration: 0.5 } },
 };
 //const tags = ["react","gsap","javascript"]
+
+const Image = styled.div`
+  background-image: ${(props) => `url(${props.img})`};
+  width: 100%;
+  height: 60%;
+  background-size: cover;
+  border: 1px solid transparent;
+  background-position: center center;
+  ${mediaQueries(25)`
+    
+    height:70%;
+
+
+  `};
+
+  ${Box}:hover & {
+    border: 1px solid ${(props) => props.theme.body};
+  }
+`;
+
 const Card = (props) => {
-  const { id, name, description, tags, demo, github } = props.data;
+  const { id, name, description, tags, demo, github, imgSrc } = props.data;
   return (
     <Box key={id} variants={item}>
+      <Image img={imgSrc} />
       <Title>{name}</Title>
       <Description>{description}</Description>
       <Tags>

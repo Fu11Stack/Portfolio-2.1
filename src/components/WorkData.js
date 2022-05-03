@@ -1,10 +1,10 @@
 export const Work = [
     {
         id:1,
-        name:"Agency Landing Page",
-        description:"It is build on top of the React JS, with styledComponents and GSAP for smooth scrolling animations.",
+        name:"Face Detect",
+        description:"It is build with React. Using Clarion face detect API",
         tags:["react","gsap","styledComponents"],
-        
+        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--sBeV06Xc--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2yrzy75q4dzibqz6rf82.png",
         demo:"https://agency-website-eta.vercel.app/",
         github:"https://github.com/codebucks27/Agency-website"
     },

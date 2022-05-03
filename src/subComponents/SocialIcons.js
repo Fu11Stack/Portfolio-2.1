@@ -38,6 +38,11 @@ const Icons = styled.div`
         height:20px
       }
       
+      @media only screen and (max-width: 50em) {
+        color: ${(props) => (props.theme.text)};
+        text-shadow: ${(props) => ( "0 0 4px #000" )};
+      }
+    
     
 
 
@@ -62,7 +67,7 @@ const SocialIcons = (props) => {
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
-          to={{ pathname: "https://github.com/codebucks27" }}
+          to={{ pathname: "https://github.com/Fu11Stack" }}
         >
           <Github
             width={25}
@@ -81,7 +86,7 @@ const SocialIcons = (props) => {
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
-          to={{ pathname: "https://twitter.com/code_bucks" }}
+          to={{ pathname: "https://Linkedin.com" }}
         >
           <Linkedin
             width={25}
@@ -99,8 +104,7 @@ const SocialIcons = (props) => {
       >
         <NavLink
           style={{ color: "inherit" }}
-          target="_blank"
-          to={{ pathname: "https://www.facebook.com/codebucks27" }}
+          to="/email"
         >
           <Email
             width={25}
