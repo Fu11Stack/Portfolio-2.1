@@ -4,7 +4,7 @@ A passionate Web developer. I enjoy to build beautiful websites with latest tech
 
 🔭 I’m currently working on React Projects
 
-📫 How to reach me Jus10Lopez@yahoo.com
+📫 How to reach me Justinsubocz@gmail.com
 
 Live site at: ()
 
@@ -87,3 +87,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
+  
